@@ -81,6 +81,7 @@
     ul.nav li.active,
     ul.nav li:hover{
       color: #444;
+      
     }
     ul.nav li::after {
       content: '';
@@ -99,7 +100,7 @@
       background: #2CA62F;
     }
     .line {
-        width: 76%;
+        width: 2%;
         margin: auto;
         background: #eee;
         height: 7px;
@@ -120,18 +121,134 @@
       transition: all .8s ease;
     }
 
+    .content {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      animation: anim .7s linear forwards;
+      /* flex-direction: column; */
+    }
+
+    section {
+      width: 70%;
+      margin: auto;
+      background-image: linear-gradient(to right, #2CA62F 0%, #F8C300 100%);
+      border-radius: 4px;
+      padding: 30px;
+      color: #fff;
+    }
+    section span {
+      font-size: 3rem;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-weight: 900;
+      margin-top: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+
+    }
+    section p {
+      padding: 30px 40px;
+      text-align: center;
+      font-weight: bolder;
+      font-size: 13px;
+
+    }
+
+    /* Depois */
+    .profile:checked ~ .head .nav li.st1::before,
+
+    .settings:checked ~ .head .nav li.st1::before,
+    .settings:checked ~ .head .nav li.st2::before,
+
+    .post:checked ~ .head .nav li.st1::before,
+    .post:checked ~ .head .nav li.st2::before,
+    .post:checked ~ .head .nav li.st3::before,
+
+    .books:checked ~ .head .nav li.st1::before,
+    .books:checked ~ .head .nav li.st2::before,
+    .books:checked ~ .head .nav li.st3::before,
+    .books:checked ~ .head .nav li.st4::before{
+      border: 2px solid #fff;
+      background: #777;
+      transition: all .3s ease;
+    }
+
+    .settings:checked ~ .head .line span{
+      width: 190px;
+    }
+    .post:checked ~ .head .line span{
+      width: 360px;
+    }
+    .books:checked ~ .head .line span{
+      width: 550px;
+    }
+
+    .profile-section,
+    .account-section,
+    .post-section,
+    .advanced-section{
+      transform: scale(0);
+      transform-origin: center bottom;
+      transition: all .7s ease;
+      position: absolute;
+      top: 0;
+
+    }
+    .profile:checked ~ .content .profile-section,
+    .settings:checked ~ .content .account-section,
+    .post:checked ~ .content .post-section,
+    .books:checked ~ .content .advanced-section{
+      display: block;
+      transform: scale(1);
+      transform-origin: bottom;
+    }
+
+    @keyframes anim {
+      0% {
+        opacity: 0;
+        transform: translateY(40px); 
+      }
+      50% {
+        opacity: .5;
+        transform: translateY(20px); 
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px); 
+      }
+    }
+    @keyframes trans {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px); 
+      }
+      50% {
+        opacity: .5;
+        transform: translateY(-20px); 
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px); 
+      }
+    }
+
 
   </style>
 </head>
 <body>
   <div class="container">
-    <input type="radio" name="profile" id="profile" class="profile" checked >
-    <input type="radio" name="settings" id="settings" class="settings" >
-    <input type="radio" name="post" id="post"  >
-    <input type="radio" name="books" id="books"  >
+    <input type="radio" checked  id="" class="profile"  name="bright">
+    <input type="radio"  id="" class="settings" name="bright">
+    <input type="radio"   id="" class="post" name="bright">
+    <input type="radio"   id="" class="books" name="bright">
     <div class="head">
       <ul class="nav">
-        <li class="st stl active">
+        <li class="st st1 active">
           <h2 class="inner">Perfil</h2>
         </li>
         <li class="st st2">
@@ -171,5 +288,19 @@
       </section>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>  <script>
+    $(".st1").click(function() {
+      $(".profile").prop("checked", true);
+    });
+    $(".st2").click(function() {
+      $(".settings").prop("checked", true);
+    });
+    $(".st3").click(function() {
+      $(".post").prop("checked", true);
+    });
+    $(".st4").click(function() {
+      $(".books").prop("checked", true);
+    });
+  </script>
 </body>
 </html>
