@@ -42,7 +42,7 @@
     ul.nav li {
       list-style: none;
       float: left;
-      width: 25%;
+      width: 33%;
       text-align: center;
       color: #aaa;
       text-transform: uppercase;
@@ -100,19 +100,19 @@
       background: #2CA62F;
     }
     .line {
-        width: 2%;
+        width: 66%;
         margin: auto;
         background: #eee;
         height: 7px;
         position: absolute;
-        left: 11.5%;
+        left: 16.5%;
         top: 52px;
         z-index: 1;
         border-radius: 50px;
     }
     .line span {
       content: '';
-      width: 50%;
+      width: 0%;
       height: 100%;
       background-image: linear-gradient(to right, #2CA62F 0%, #F8C300 100%);
       position: absolute;
@@ -160,37 +160,35 @@
     }
 
     /* Depois */
-    .profile:checked ~ .head .nav li.st1::before,
+    .escolherimagem:checked ~ .head .nav li.st1::before,
 
-    .settings:checked ~ .head .nav li.st1::before,
-    .settings:checked ~ .head .nav li.st2::before,
+    .comecarenvio:checked ~ .head .nav li.st1::before,
+    .comecarenvio:checked ~ .head .nav li.st2::before,
 
-    .post:checked ~ .head .nav li.st1::before,
-    .post:checked ~ .head .nav li.st2::before,
-    .post:checked ~ .head .nav li.st3::before,
+    .finalizar:checked ~ .head .nav li.st1::before,
+    .finalizar:checked ~ .head .nav li.st2::before,
+    .finalizar:checked ~ .head .nav li.st3::before,
 
     .books:checked ~ .head .nav li.st1::before,
     .books:checked ~ .head .nav li.st2::before,
     .books:checked ~ .head .nav li.st3::before,
     .books:checked ~ .head .nav li.st4::before{
       border: 2px solid #fff;
-      background: #777;
+      background: #2CA62F;
       transition: all .3s ease;
     }
 
-    .settings:checked ~ .head .line span{
-      width: 190px;
+    .comecarenvio:checked ~ .head .line span{
+      width: 50%;
     }
-    .post:checked ~ .head .line span{
-      width: 360px;
+    .finalizar:checked ~ .head .line span{
+      width: 100%;
     }
-    .books:checked ~ .head .line span{
-      width: 550px;
-    }
+    
 
-    .profile-section,
+    .escolherimagem-section,
     .account-section,
-    .post-section,
+    .finalizar-section,
     .advanced-section{
       transform: scale(0);
       transform-origin: center bottom;
@@ -199,9 +197,9 @@
       top: 0;
 
     }
-    .profile:checked ~ .content .profile-section,
-    .settings:checked ~ .content .account-section,
-    .post:checked ~ .content .post-section,
+    .escolherimagem:checked ~ .content .escolherimagem-section,
+    .comecarenvio:checked ~ .content .account-section,
+    .finalizar:checked ~ .content .finalizar-section,
     .books:checked ~ .content .advanced-section{
       display: block;
       transform: scale(1);
@@ -242,23 +240,19 @@
 </head>
 <body>
   <div class="container">
-    <input type="radio" checked  id="" class="profile"  name="bright">
-    <input type="radio"  id="" class="settings" name="bright">
-    <input type="radio"   id="" class="post" name="bright">
-    <input type="radio"   id="" class="books" name="bright">
+    <input type="radio" checked  id="" class="escolherimagem"  name="bright">
+    <input type="radio"  id="" class="comecarenvio" name="bright">
+    <input type="radio"   id="" class="finalizar" name="bright">
     <div class="head">
       <ul class="nav">
         <li class="st st1 active">
-          <h2 class="inner">Perfil</h2>
+          <h2 class="inner"><i class="fa fa-edit"></i>Escolher Imagem</h2>
         </li>
         <li class="st st2">
-          <h2 class="inner">Conta</h2>
+          <h2 class="inner"><i class="fa fa-edit"></i>Começar Envio</h2>
         </li>
         <li class="st st3">
-          <h2 class="inner">Publicação</h2>
-        </li>
-        <li class="st st4">
-          <h2 class="inner">Avançado</h2>
+          <h2 class="inner"><i class="fa fa-edit"></i>Finalizar</h2>
         </li>
       </ul>
       <div class="line">
@@ -266,40 +260,32 @@
       </div>
     </div>
     <div class="content">
-      <section class="profile-section">
-        <span><i class="fa fa-house"></i></span>
-        <h1>perfil Section</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sequi dolore delectus nostrum eius, fugiat, provident numquam quia totam alias ab. Obcaecati saepe provident ratione aspernatur tempore ipsum impedit reiciendis!</p>
-      </section>
-      <section class="account-section">
-        <span><i class="fa fa-user"></i></span>
-        <h1>Conta Section</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sequi dolore delectus nostrum eius, fugiat, provident numquam quia totam alias ab. Obcaecati saepe provident ratione aspernatur tempore ipsum impedit reiciendis!</p>
-      </section>
-      <section class="post-section">
+      <section class="escolherimagem-section">
         <span><i class="fa fa-edit"></i></span>
-        <h1>Publicação Section</h1>
+        <h1>Escolher Imagem</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sequi dolore delectus nostrum eius, fugiat, provident numquam quia totam alias ab. Obcaecati saepe provident ratione aspernatur tempore ipsum impedit reiciendis!</p>
       </section>
-      <section class="advanced-section">
-        <span><i class="fa fa-cog"></i></span>
-        <h1>Avançado Section</h1>
+      <section class="comecarenvio-section">
+        <span><i class="fa fa-edit"></i></span>
+        <h1>Começar Envio</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sequi dolore delectus nostrum eius, fugiat, provident numquam quia totam alias ab. Obcaecati saepe provident ratione aspernatur tempore ipsum impedit reiciendis!</p>
+      </section>
+      <section class="finalizar-section">
+        <span><i class="fa fa-edit"></i></span>
+        <h1>Finalizar</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt sequi dolore delectus nostrum eius, fugiat, provident numquam quia totam alias ab. Obcaecati saepe provident ratione aspernatur tempore ipsum impedit reiciendis!</p>
       </section>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>  <script>
     $(".st1").click(function() {
-      $(".profile").prop("checked", true);
+      $(".escolherimagem").prop("checked", true);
     });
     $(".st2").click(function() {
-      $(".settings").prop("checked", true);
+      $(".comecarenvio").prop("checked", true);
     });
     $(".st3").click(function() {
-      $(".post").prop("checked", true);
-    });
-    $(".st4").click(function() {
-      $(".books").prop("checked", true);
+      $(".finalizar").prop("checked", true);
     });
   </script>
 </body>
